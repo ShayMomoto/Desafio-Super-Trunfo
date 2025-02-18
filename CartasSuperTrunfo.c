@@ -1,47 +1,61 @@
 #include <stdio.h>
 
-
 int main() {
-    char codigo [4];
-    char nome [50];
-    int populacao;
-    float area;
-    double pib;
-    int pt; //Ponto Turistico.
+    char codigo1[4], nome1[50], codigo2[4], nome2[50];
+    unsigned long int populacao1, populacao2;
+    float area1, area2;
+    double pib1, pib2;
+    int pt1, pt2; // Pontos Turísticos
 
-    //cidades
+    // Cadastro da primeira cidade
+    printf ("\n*** Cadastre a Primeira Cidade ***\n");
+    printf ("Código da cidade: ");
+    scanf ("%s", codigo1);
+    printf ("Nome da cidade: ");
+    scanf (" %[^\n]", nome1); // Permite espaços no nome
+    printf ("População: ");
+    scanf ("%lu", &populacao1);
+    printf ("Área (km²): ");
+    scanf ("%f", &area1);
+    printf ("PIB: ");
+    scanf ("%lf", &pib1);
+    printf ("Número de Pontos Turísticos: ");
+    scanf ("%d", &pt1);
 
-    printf ("Cadastro da Cidade.\n");
-    printf ("Digite o código da Cidade:\n");
-    scanf ("%s", &codigo);
+    // Cadastro da segunda cidade
+    printf ("\n*** Cadastre a Segunda Cidade ***\n");
+    printf ("Código da cidade: ");
+    scanf ("%s", codigo2);
+    printf ("Nome da cidade: ");
+    scanf (" %[^\n]", nome2);
+    printf ("População: ");
+    scanf ("%lu", &populacao2);
+    printf ("Área (km²): ");
+    scanf ("%f", &area2);
+    printf ("PIB: ");
+    scanf ("%lf", &pib2);
+    printf ("Número de Pontos Turísticos: ");
+    scanf ("%d", &pt2);
 
-    printf ("Nome da cidade:\n");
-    scanf ("%s", &nome);
+    // Cálculo da Densidade Populacional e PIB per Capita
+    float densidade1 = (area1 > 0) ? (populacao1 / (float) area1) : 0;
+    float densidade2 = (area2 > 0) ? (populacao2 / (float) area2) : 0;
+    double pibPerCapita1 = (populacao1 > 0) ? (pib1 / populacao1) : 0;
+    double pibPerCapita2 = (populacao2 > 0) ? (pib2 / populacao2) : 0;
 
-    printf ("População:\n");
-    scanf ("%d", &populacao);
-    
-    printf ("Área (km²):\n");
-    scanf ("%f", &area);
+    // Cálculo do Super Poder
+    float superPoder1 = populacao1 + area1 + pib1 + pt1 + pibPerCapita1 + (1.0 / (densidade1 + 1));
+    float superPoder2 = populacao2 + area2 + pib2 + pt2 + pibPerCapita2 + (1.0 / (densidade2 + 1));
 
-    printf ("PIB:\n");
-    scanf ("%lf", &pib );
+    // Comparação das Cartas
+    printf ("\n****** Comparação das Cartas ******\n");
+    printf("População: Carta %d venceu (%d)\n", (populacao1 > populacao2) ? 1 : 2, (populacao1 > populacao2));
+    printf("Área: Carta %d venceu (%d)\n", (area1 > area2) ? 1 : 2, (area1 > area2));
+    printf("PIB: Carta %d venceu (%d)\n", (pib1 > pib2) ? 1 : 2, (pib1 > pib2));
+    printf("Pontos Turísticos: Carta %d venceu (%d)\n", (pt1 > pt2) ? 1 : 2, (pt1 > pt2));
+    printf("Densidade Populacional: Carta %d venceu (%d)\n", (densidade1 < densidade2) ? 1 : 2, (densidade1 < densidade2));
+    printf("PIB per Capita: Carta %d venceu (%d)\n", (pibPerCapita1 > pibPerCapita2) ? 1 : 2, (pibPerCapita1 > pibPerCapita2));
+    printf("Super Poder: Carta %d venceu (%d)\n", (superPoder1 > superPoder2) ? 1 : 2, (superPoder1 > superPoder2));
 
-    printf ("Numero de Pontos Turisticos:\n");
-    scanf ("%d", &pt);
-
-    float densidadePopulacional = (area > 0) ?(populacao / area): 0;
-    double pibPerCapita = (populacao > 0) ? (pib / populacao): 0;
-
-      // Exibição dos dados cadastrados
-    printf("\n===== Dados da Cidade =====\n");
-    printf("Código: %s\n", codigo);
-    printf("Nome: %s\n", nome);
-    printf("População: %d habitantes\n", populacao);
-    printf("Área: %.2f km²\n", area);
-    printf("PIB: %.2lf bilhões\n", pib);
-    printf("Pontos turísticos: %d\n", pt);
-    printf("Densidade populacional: %.2f hab/km²\n", densidadePopulacional);
-    printf("PIB per Capita: %.2lf bilhões/hab\n", pibPerCapita);
     return 0;
 }
