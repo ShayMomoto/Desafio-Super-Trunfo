@@ -7,9 +7,11 @@ Nesse repositório, tem todos os commites já feitos, desde o nivel iniciante, a
 
 O ultimo comite foi feito no dia 02/03/2025, com a adição de um menu interativo de switchs.
 Conteudo as seguintes opções
+
 *1. Iniciar jogo
 *2. Dicas do jogo
 *3. Fehar o jogo.
+
 Todas as opções estão com sua devida informação vinculadas a ela.
 
 A penultima atualização foi no dia 24/02/2025, aonde foi alterado o modo de comparação das cartas por If e Else.
