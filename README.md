@@ -9,7 +9,9 @@ O ultimo comite foi feito no dia 02/03/2025, com a adição de um menu interativ
 Conteudo as seguintes opções
 
 *1. Iniciar jogo
+
 *2. Dicas do jogo
+
 *3. Fehar o jogo.
 
 Todas as opções estão com sua devida informação vinculadas a ela.
