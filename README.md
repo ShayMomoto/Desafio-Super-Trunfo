@@ -1,5 +1,5 @@
 # ⚠️ Importante!!!
-Tinha me esquecido de fazer os uploads anteriores no SAVA, peço desculpas, mas todas informações estão disponiveis no branch:
+Tinha me esquecido de fazer os uploads anteriores no SAVA, peço desculpas, mas todas informações estão disponiveis no gráfico!:
 ![image](https://github.com/user-attachments/assets/5ba47083-44ec-4ee6-acf6-b166cfbc42ea)
 
 
